@@ -1,0 +1,85 @@
+#include <iostream>
+#include <string>
+
+class Cat {
+private:
+    std::string name;
+    int age;
+
+public:
+    Cat(const std::string& n, int a) : name(n), age(a) {}
+
+    void display() const {
+        std::cout << "Cat - Name: " << name << ", Age: " << age << std::endl;
+    }
+};
+
+class Pencil {
+private:
+    std::string brand;
+    std::string color;
+
+public:
+    Pencil(const std::string& b, const std::string& c) : brand(b), color(c) {}
+
+    void display() const {
+        std::cout << "Pencil - Brand: " << brand << ", Color: " << color << std::endl;
+    }
+};
+
+class Worker {
+private:
+    std::string name;
+    int salary;
+
+public:
+    Worker(const std::string& n, int s) : name(n), salary(s) {}
+
+    void display() const {
+        std::cout << "Worker - Name: " << name << ", Salary: $" << salary << std::endl;
+    }
+};
+
+class Student {
+private:
+    std::string name;
+    int grade;
+
+public:
+    Student(const std::string& n, int g) : name(n), grade(g) {}
+
+    void display() const {
+        std::cout << "Student - Name: " << name << ", Grade: " << grade << std::endl;
+    }
+};
+
+int main() {
+    const int numberOfObjects = 3;
+
+    Cat cats[] = { {"Whiskers", 2}, {"Mittens", 3}, {"Felix", 1} };
+    Pencil pencils[] = { {"Dixon", "Yellow"}, {"Faber-Castell", "Blue"}, {"Ticonderoga", "Black"} };
+    Worker workers[] = { {"John", 50000}, {"Alice", 60000}, {"Bob", 55000} };
+    Student students[] = { {"Emma", 85}, {"Daniel", 92}, {"Sophia", 78} };
+
+    std::cout << "\nDetails of Cats:\n";
+    for (const auto& cat : cats) {
+        cat.display();
+    }
+
+    std::cout << "\nDetails of Pencils:\n";
+    for (const auto& pencil : pencils) {
+        pencil.display();
+    }
+
+    std::cout << "\nDetails of Workers:\n";
+    for (const auto& worker : workers) {
+        worker.display();
+    }
+
+    std::cout << "\nDetails of Students:\n";
+    for (const auto& student : students) {
+        student.display();
+    }
+
+    return 0;
+}
